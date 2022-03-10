@@ -90,20 +90,24 @@ class WolfSheep(Model):
             }
         )
 
+
         # Create sheep:
         # ... to be completed
-        init_energy_sheep = 40
-        for i_s in range(self.initial_sheep):
+        self.idx = 0
+        init_energy_sheep = 100
+        for _ in range(self.initial_sheep):
             init_x, init_y = random.randrange(self.width), random.randrange(self.height)
-            s = Sheep(i_s, (init_x, init_y), self,moore=True, energy=init_energy_sheep)
+            s = Sheep(self.idx, (init_x, init_y), self,moore=True, energy=init_energy_sheep)
+            self.idx +=1
             self.grid.place_agent(s, (init_x, init_y))
             self.schedule.add(s)
         # Create wolves
         # ... to be completed
-        init_energy_wolves = 10
-        for i_w in range(self.initial_wolves):
+        init_energy_wolves = 30
+        for _ in range(self.initial_wolves):
             init_x, init_y = random.randrange(self.width), random.randrange(self.height)
-            w = Wolf(self.initial_sheep+i_w, (init_x, init_y), self,moore=True ,energy=init_energy_wolves)
+            w = Wolf(self.idx, (init_x, init_y), self,moore=True ,energy=init_energy_wolves)
+            self.idx +=1
             self.grid.place_agent(w, (init_x, init_y))
             self.schedule.add(w)
 
@@ -112,7 +116,8 @@ class WolfSheep(Model):
         i_g = 0
         for x in range(self.width):
             for y in range(self.height):
-                g = GrassPatch(self.initial_sheep+self.initial_wolves+i_g, (x,y), self, self.grass, self.grass_regrowth_time)
+                g = GrassPatch(self.idx, (x,y), self, self.grass, self.grass_regrowth_time)
+                self.idx +=1
                 i_g += 1
                 self.grid.place_agent(g, (x, y))
                 self.schedule.add(g)
@@ -127,7 +132,6 @@ class WolfSheep(Model):
         self.datacollector.collect(self)
 
         # ... to be completed
-        # reproduction
 
     def run_model(self, step_count=200):
 

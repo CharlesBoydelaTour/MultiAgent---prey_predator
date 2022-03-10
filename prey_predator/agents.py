@@ -2,8 +2,7 @@ from re import A
 from mesa import Agent
 from torch import isin
 from prey_predator.random_walk import RandomWalker
-
-
+import random
 class Sheep(RandomWalker):
     """
     A sheep that walks around, reproduces (asexually) and gets eaten.
@@ -37,9 +36,17 @@ class Sheep(RandomWalker):
         # ... to be completed
         self.energy -=1 
         self.eat_grass()
-        if self.energy == 0:
+        if self.energy <= 0:
             self.model.grid._remove_agent(self.pos, self)
             self.model.schedule.remove(self)
+        
+        prob_reproduce = random.random()    
+        if prob_reproduce >= 1-self.model.sheep_reproduce:
+            lamb = Sheep(self.model.idx, self.pos, self.model, self.moore, self.energy/2)
+            self.model.idx += 1
+            self.model.grid.place_agent(lamb, lamb.pos)
+            self.model.schedule.add(lamb)
+            self.energy = self.energy/2
         
 
 
@@ -69,9 +76,17 @@ class Wolf(RandomWalker):
         # ... to be completed
         self.energy -=1 
         self.eat_sheep()
-        if self.energy == 0:
+        if self.energy <= 0:
             self.model.grid._remove_agent(self.pos, self)
             self.model.schedule.remove(self)
+        
+        prob_reproduce = random.random()    
+        if prob_reproduce >= 1-self.model.wolf_reproduce:
+            wolf = Wolf(self.model.idx, self.pos, self.model, self.moore, self.energy/2)
+            self.model.idx += 1
+            self.model.grid.place_agent(wolf, wolf.pos)
+            self.model.schedule.add(wolf)
+            self.energy = self.energy/2
         
 
 class GrassPatch(Agent):
