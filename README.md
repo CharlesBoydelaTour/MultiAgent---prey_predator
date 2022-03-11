@@ -27,8 +27,9 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ![Alt text](images/nowolves/stats.png?raw=true)
 
-| Grass Regrowth Time      |   65 |
+| Parameters               |      |
 | :----------------------- | ---: |
+| Grass Regrowth Time      |   65 |
 | Initial Sheep Population |   20 |
 | Sheep Reproduction Rate  |  0.3 |
 | Initial Wolf Population  |    0 |
@@ -43,8 +44,9 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ![Alt text](images/wolvesdomination/stats.png?raw=true)
 
-| Grass Regrowth Time      |   65 |
+| Parameters               |      |
 | :----------------------- | ---: |
+| Grass Regrowth Time      |   65 |
 | Initial Sheep Population |   20 |
 | Sheep Reproduction Rate  |  0.3 |
 | Initial Wolf Population  |   10 |
@@ -58,8 +60,9 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ![Alt text](images/equilibrium/data.png?raw=true)
 
-| Grass Regrowth Time      |   65 |
+| Parameters               |      |
 | :----------------------- | ---: |
+| Grass Regrowth Time      |   65 |
 | Initial Sheep Population |   20 |
 | Sheep Reproduction Rate  |  0.3 |
 | Initial Wolf Population  |   10 |
