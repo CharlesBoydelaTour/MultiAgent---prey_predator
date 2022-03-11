@@ -19,16 +19,55 @@ The model is tests and demonstrates several Mesa concepts and features:
 
 ## Implementation
 
+## Results
 
-## Results 
-
-We experimented 3 different scenarios: Equilibrium with no wolf, wold domination and overall equilibrium.
+We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination and overall equilibrium.
 
 ### No Wolf Equilibrium
 
-![plot](./images/no wolves/stats.png)
+![Alt text](images/nowolves/stats.png?raw=true)
+
+| Grass Regrowth Time      |   65 |
+| :----------------------- | ---: |
+| Initial Sheep Population |   20 |
+| Sheep Reproduction Rate  |  0.3 |
+| Initial Wolf Population  |    0 |
+| Wolf Reproduction Rate   | 0.06 |
+| Wolf Gain From Food      |   17 |
+| Sheep Gain From Food     |    6 |
+| Initial Energy of Sheep  |   30 |
+| Initial Energy of Wolf   |    2 |
 
 
+### Wold domination
+
+![Alt text](images/wolvesdomination/stats.png?raw=true)
+
+| Grass Regrowth Time      |   65 |
+| :----------------------- | ---: |
+| Initial Sheep Population |   20 |
+| Sheep Reproduction Rate  |  0.3 |
+| Initial Wolf Population  |   10 |
+| Wolf Reproduction Rate   | 0.08 |
+| Wolf Gain From Food      |   17 |
+| Sheep Gain From Food     |    6 |
+| Initial Energy of Sheep  |   30 |
+| Initial Energy of Wolf   |    2 |
+
+### Overall equilibrium
+
+![Alt text](images/equilibrium/data.png?raw=true)
+
+| Grass Regrowth Time      |   65 |
+| :----------------------- | ---: |
+| Initial Sheep Population |   20 |
+| Sheep Reproduction Rate  |  0.3 |
+| Initial Wolf Population  |   10 |
+| Wolf Reproduction Rate   | 0.06 |
+| Wolf Gain From Food      |   17 |
+| Sheep Gain From Food     |    6 |
+| Initial Energy of Sheep  |   30 |
+| Initial Energy of Wolf   |    2 |
 
 ## Installation
 
