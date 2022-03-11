@@ -57,7 +57,7 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ### Overall equilibrium
 
-![images](images/equilibrium/stats2.png?raw=true)
+![images](images/equilibriums/stats2.png?raw=true)
 
 | Parameters               |      |
 | :----------------------- | ---: |
