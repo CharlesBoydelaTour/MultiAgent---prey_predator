@@ -19,6 +19,12 @@ The model is tests and demonstrates several Mesa concepts and features:
 
 ## Implementation
 
+We have modified the environment file to include the initial energy for sheep and wolves. Indeed, the parameters of the initial situation are very important for the stabilisation or not of the system. Our agents (sheep and wolves) are then randomly located on the map. Grass is also a category of agent located on the whole map and which, once empty, grows in a defined time (fat_regrowth_time).
+
+If we go into more detail about the implementation of sheep and wolves, a system of "death" and "reproduction" has been defined.  Wolf and sheep move randomly on the map. The death of a wolf is linked to the decrease of its energy to 0. Both wolf and sheep lose 1 energy for each movement. To recharge its energy, a wolf can eat a sheep when it is in the same position and if it is not satiated. An agent is shaved if its energy is twice its initial energy.
+A sheep can eat grass if it is on a cell with fully grown grass and if it is not satiated. If a sheep is eaten it is killed.
+Sheep and wolf can give birth to another sheep and wolf alone with a defined probability at each move. The "child" has an energy equal to half the energy of the parent. If the parent was too "weak", it will have little chance of survival.
+
 ## Results
 
 We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination and overall equilibrium.
