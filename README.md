@@ -33,6 +33,9 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ![images](images/nowolves/stats.png?raw=true)
 
+Considering an environment with only sheep (no prey), the impact of grass growth rate and breeding rate is essential. With our parameters (see below), an oscillatory equilibrium around 300 sheep is reached with a minimum at 180 and a maximum at 400 individuals.
+The oscillation is due to the pushing speed of the grass which is entirely consumed by the reproductive speed of the sheep.
+
 | Parameters               |      |
 | :----------------------- | ---: |
 | Grass Regrowth Time      |   65 |
@@ -49,6 +52,8 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ![images](images/wolvesdomination/stats.png?raw=true)
 
+Considering an environment with only sheep and wolves, a long-term balance is more complicated to achieve. In the curves above, we can see that the growth of wolves is directly related to the growth of sheep. The latter appears with a delay. The last increase in the number of sheep, which is greater than the previous ones, leads to a greater growth in the number of wolves, which will eventually eat all the sheep, leading to the disappearance of all the sheep and wolves.
+
 | Parameters               |      |
 | :----------------------- | ---: |
 | Grass Regrowth Time      |   65 |
@@ -63,7 +68,11 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ### Overall equilibrium
 
+
 ![images](images/equilibriums/stats2.png?raw=true)
+
+By decreasing, very slightly, the breeding speed of the wolves, while keeping the other parameters the same, a new oscillatory equilibrium can be obtained (see above).
+The number of wolves, however, oscillates in a smaller range.
 
 | Parameters               |      |
 | :----------------------- | ---: |
