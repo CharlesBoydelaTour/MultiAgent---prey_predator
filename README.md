@@ -92,7 +92,7 @@ The number of wolves, however, oscillates in a smaller range.
 We would like to note that the results of our implementation will depend considerably on the initial state of the environment (initial positions of each agent).
 Since the initialization is random, it is not guaranteed to obtain the same result for all simulations.
 
-To choose an appropiate set of parameters as reference set of a given equilibrium state, we conducted for each set several similations, then we chose the set that gave more or less the same result at several simulations.
+To choose an appropiate set of parameters as reference set of a given equilibrium state, we conducted for each set several similations, then we chose the set that gave more or less the same result most of the time.
 
 ## Installation
 
