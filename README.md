@@ -87,6 +87,13 @@ The number of wolves, however, oscillates in a smaller range.
 | Initial Energy of Sheep  |   30 |
 | Initial Energy of Wolf   |    2 |
 
+### N.B:
+
+We would like to note that the results of our implementation will depend considerably on the initial state of the environment (initial positions of each agent).
+Since the initialization is random, it is not guaranteed to obtain the same result for all simulations.
+
+To choose an appropiate set of parameters as reference set of a given equilibrium state, we conducted for each set several similations, then we chose the set that gave more or less the same result at several simulations.
+
 ## Installation
 
 To install the dependencies use pip and the requirements.txt in this directory. e.g.
