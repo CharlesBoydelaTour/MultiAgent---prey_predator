@@ -1,3 +1,5 @@
+Charles Boy de la Tour - Zakariae El Asri
+
 # Prey - Predator Model
 
 ## Summary
@@ -7,12 +9,26 @@ A simple ecological model, consisting of three agent types: wolves, sheep, and g
 If wolves and sheep have enough energy, they reproduce, creating a new wolf or sheep (in this simplified model, only one parent is needed for reproduction). The grass on each cell regrows at a constant rate. If any wolves and sheep run out of energy, they die.
 
 The model is tests and demonstrates several Mesa concepts and features:
- - MultiGrid
- - Multiple agent types (wolves, sheep, grass)
- - Overlay arbitrary text (wolf's energy) on agent's shapes while drawing on CanvasGrid
- - Agents inheriting a behavior (random movement) from an abstract parent
- - Writing a model composed of multiple files.
- - Dynamically adding and removing agents from the schedule
+
+- MultiGrid
+- Multiple agent types (wolves, sheep, grass)
+- Overlay arbitrary text (wolf's energy) on agent's shapes while drawing on CanvasGrid
+- Agents inheriting a behavior (random movement) from an abstract parent
+- Writing a model composed of multiple files.
+- Dynamically adding and removing agents from the schedule
+
+## Implementation
+
+
+## Results 
+
+We experimented 3 different scenarios: Equilibrium with no wolf, wold domination and overall equilibrium.
+
+### No Wolf Equilibrium
+
+![plot](./images/no wolves/stats.png)
+
+
 
 ## Installation
 
