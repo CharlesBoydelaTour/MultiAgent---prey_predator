@@ -45,10 +45,17 @@ chart_element = ChartModule(
 )
 
 model_params = {
-
+    "grass": UserSettableParameter("checkbox", "Grass Enabled", True),
+    "grass_regrowth_time": UserSettableParameter("slider", "Grass Regrowth Time", 20, 1, 50),
+    "initial_sheep": UserSettableParameter("slider", "Initial Sheep Population", 100, 10, 300),
+    "sheep_reproduce": UserSettableParameter("slider", "Sheep Reproduction Rate", 0.04, 0.01, 1.0,
+                                             0.01),
+    "initial_wolves": UserSettableParameter("slider", "Initial Wolf Population", 50, 10, 300),
+    "wolf_reproduce": UserSettableParameter("slider", "Wolf Reproduction Rate", 0.05, 0.01, 1.0,
+                                            0.01),
+    "wolf_gain_from_food": UserSettableParameter("slider", "Wolf Gain From Food Rate", 20, 1, 50),
+    "sheep_gain_from_food": UserSettableParameter("slider", "Sheep Gain From Food", 4, 1, 10)
 }
 
-server = ModularServer(
-    WolfSheep, [canvas_element, chart_element], "Prey Predator Model", model_params
-)
+server = ModularServer(WolfSheep, [canvas_element, chart_element], "Wolf Sheep Predation", model_params)
 server.port = 8521
