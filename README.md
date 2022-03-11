@@ -17,6 +17,8 @@ The model is tests and demonstrates several Mesa concepts and features:
 - Writing a model composed of multiple files.
 - Dynamically adding and removing agents from the schedule
 
+<img src="images\Animation.gif" width="256" height="256" />
+
 ## Implementation
 
 We have modified the environment file to include the initial energy for sheep and wolves. Indeed, the parameters of the initial situation are very important for the stabilisation or not of the system. Our agents (sheep and wolves) are then randomly located on the map. Grass is also a category of agent located on the whole map and which, once empty, grows in a defined time (fat_regrowth_time).
@@ -67,7 +69,6 @@ Considering an environment with only sheep and wolves, a long-term balance is mo
 | Initial Energy of Wolf   |    2 |
 
 ### Overall equilibrium
-
 
 ![images](images/equilibriums/stats2.png?raw=true)
 
