@@ -25,7 +25,7 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ### No Wolf Equilibrium
 
-![Alt text](images/nowolves/stats.png?raw=true)
+![images](images/nowolves/stats.png?raw=true)
 
 | Parameters               |      |
 | :----------------------- | ---: |
@@ -41,7 +41,7 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ### Wolf domination
 
-![Alt text](images/wolvesdomination/stats.png?raw=true)
+![images](images/wolvesdomination/stats.png?raw=true)
 
 | Parameters               |      |
 | :----------------------- | ---: |
@@ -57,7 +57,7 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ### Overall equilibrium
 
-![Alt text](images/equilibrium/stats2.png?raw=true)
+![images](images/equilibrium/stats2.png?raw=true)
 
 | Parameters               |      |
 | :----------------------- | ---: |
