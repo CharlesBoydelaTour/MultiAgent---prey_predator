@@ -35,18 +35,19 @@ class Sheep(RandomWalker):
         self.random_move()
         # ... to be completed
         self.energy -=1 
-        self.eat_grass()
+        if self.energy < self.model.init_energy_sheep * 2 :
+            self.eat_grass()
         if self.energy <= 0:
             self.model.grid._remove_agent(self.pos, self)
             self.model.schedule.remove(self)
-        
-        prob_reproduce = random.random()    
-        if prob_reproduce >= 1-self.model.sheep_reproduce:
-            lamb = Sheep(self.model.idx, self.pos, self.model, self.moore, self.energy/2)
-            self.model.idx += 1
-            self.model.grid.place_agent(lamb, lamb.pos)
-            self.model.schedule.add(lamb)
-            self.energy = self.energy/2
+        else:
+            prob_reproduce = random.random()    
+            if prob_reproduce >= 1-self.model.sheep_reproduce:
+                lamb = Sheep(self.model.idx, self.pos, self.model, self.moore, self.energy/2)
+                self.model.idx += 1
+                self.model.grid.place_agent(lamb, lamb.pos)
+                self.model.schedule.add(lamb)
+                #self.energy = self.energy/2
         
 
 
@@ -67,9 +68,11 @@ class Wolf(RandomWalker):
         agents = self.model.grid.get_cell_list_contents(self.pos)
         for agent in agents:
             if isinstance(agent, Sheep):
-                self.energy += self.model.wolf_gain_from_food
-                self.model.grid._remove_agent(self.pos, agent)
-                self.model.schedule.remove(agent) #il va tous les manger
+                if self.energy < self.model.init_energy_wolves * 2 : 
+                    self.energy += self.model.wolf_gain_from_food
+                    self.model.grid._remove_agent(self.pos, agent)
+                    self.model.schedule.remove(agent) #il va tous les manger
+                break
 
     def step(self):
         self.random_move()
@@ -79,14 +82,14 @@ class Wolf(RandomWalker):
         if self.energy <= 0:
             self.model.grid._remove_agent(self.pos, self)
             self.model.schedule.remove(self)
-        
-        prob_reproduce = random.random()    
-        if prob_reproduce >= 1-self.model.wolf_reproduce:
-            wolf = Wolf(self.model.idx, self.pos, self.model, self.moore, self.energy/2)
-            self.model.idx += 1
-            self.model.grid.place_agent(wolf, wolf.pos)
-            self.model.schedule.add(wolf)
-            self.energy = self.energy/2
+        else:
+            prob_reproduce = random.random()    
+            if prob_reproduce >= 1-self.model.wolf_reproduce:
+                wolf = Wolf(self.model.idx, self.pos, self.model, self.moore, self.energy/2)
+                self.model.idx += 1
+                self.model.grid.place_agent(wolf, wolf.pos)
+                self.model.schedule.add(wolf)
+                #self.energy = self.energy/2
         
 
 class GrassPatch(Agent):

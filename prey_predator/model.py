@@ -53,6 +53,9 @@ class WolfSheep(Model):
         grass=False,
         grass_regrowth_time=30,
         sheep_gain_from_food=4,
+        init_energy_sheep = 100,
+        init_energy_wolves = 20,
+        
     ):
         """
         Create a new Wolf-Sheep model with the given parameters.
@@ -74,6 +77,10 @@ class WolfSheep(Model):
         self.width = width
         self.initial_sheep = initial_sheep
         self.initial_wolves = initial_wolves
+        ##
+        self.init_energy_sheep = init_energy_sheep
+        self.init_energy_wolves = init_energy_wolves
+        ##
         self.sheep_reproduce = sheep_reproduce
         self.wolf_reproduce = wolf_reproduce
         self.wolf_gain_from_food = wolf_gain_from_food
@@ -94,19 +101,17 @@ class WolfSheep(Model):
         # Create sheep:
         # ... to be completed
         self.idx = 0
-        init_energy_sheep = 100
         for _ in range(self.initial_sheep):
             init_x, init_y = random.randrange(self.width), random.randrange(self.height)
-            s = Sheep(self.idx, (init_x, init_y), self,moore=True, energy=init_energy_sheep)
+            s = Sheep(self.idx, (init_x, init_y), self,moore=True, energy=self.init_energy_sheep)
             self.idx +=1
             self.grid.place_agent(s, (init_x, init_y))
             self.schedule.add(s)
         # Create wolves
         # ... to be completed
-        init_energy_wolves = 30
         for _ in range(self.initial_wolves):
             init_x, init_y = random.randrange(self.width), random.randrange(self.height)
-            w = Wolf(self.idx, (init_x, init_y), self,moore=True ,energy=init_energy_wolves)
+            w = Wolf(self.idx, (init_x, init_y), self,moore=True ,energy=self.init_energy_wolves)
             self.idx +=1
             self.grid.place_agent(w, (init_x, init_y))
             self.schedule.add(w)
