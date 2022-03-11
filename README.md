@@ -39,7 +39,6 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 | Initial Energy of Sheep  |   30 |
 | Initial Energy of Wolf   |    2 |
 
-
 ### Wold domination
 
 ![Alt text](images/wolvesdomination/stats.png?raw=true)
@@ -58,7 +57,7 @@ We experimented 3 different scenarios: Equilibrium with no wolf, wolf domination
 
 ### Overall equilibrium
 
-![plot](images/equilibrium/data.png)
+![plot](images/equilibrium/stats.png)
 
 | Parameters               |      |
 | :----------------------- | ---: |
